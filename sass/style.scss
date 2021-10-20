@@ -23,8 +23,17 @@
     background-size: cover;
     background-position: top;
 
+    @media (min-width: $mobile-md) {
+        min-height: 75vh;
+        background-position-y: -300px;
+    }
+
     &__logo {
         grid-area: 1/1/2/2;
+        
+        img {
+            height: 2.4em;
+        }
     }
 
     &__menu {
@@ -34,7 +43,7 @@
 
     &__title {
         grid-area: 2/1/3/3;
-        padding-top: 80px;
+        padding-top: 25%;
         color: $white;
         font-size: 4em;
         font-weight: 900;
@@ -48,18 +57,54 @@
         left: 50%;
         top: 290px;
         transform: translateX(-50%);
+
+        @media (min-width: $mobile-md) {
+            top: 400px;
+        }
+
+        @media (min-width: $mobile-lg) {
+            top: 600px;
+        }
+
+        img {
+            height: 11.4em;
+
+            @media (min-width: $mobile-md) {
+                height: 13em;
+            }
+        }
     }
 }
 
 .menu {
     &__hamburger {
 
+        img {
+            height: 2.4em;
+        }
     }
 
     &__list {
+        list-style: none;
+
         &--header {
             display: none;
         }
+
+        &--footer {
+            display: flex;
+            justify-content: space-evenly;
+            width: 100%;
+            padding-bottom: 25%;
+
+            @media (min-width: $mobile-lg) {
+                padding-bottom: 15%;
+            }
+        }
+    }
+
+    &__item {
+        font-size: 1.8em;
     }
 }
 
@@ -72,6 +117,14 @@
         background-position: center;
         width: 100%;
         height: 300px;
+
+        @media (min-width: $mobile-md) {
+            height: 600px;
+        }
+
+        @media (min-width: $mobile-lg) {
+            height: 800px;
+        }
        
         &--yellow {
         background-image: url(../images/mobile/image-transform.jpg);
@@ -89,7 +142,15 @@
         &--green, &--blue {
             background-size: cover;
             background-position: top;
-            height: 600px;
+            min-height: 600px;
+
+            @media (min-width: $mobile-md) {
+                min-height: 900px;
+            }
+
+            @media (min-width: $mobile-lg) {
+                height: 1200px;
+            }
         }
 
         &--green {
@@ -116,6 +177,14 @@
             padding-top: 330px;
             font-size: 2.6em;
             color: inherit;
+
+            @media (min-width: $mobile-md) {
+                padding-top: 600px;
+            }
+
+            @media (min-width: $mobile-lg) {
+                padding-top: 700px;
+            }
         }
     }
 
@@ -170,7 +239,149 @@
             }
         }
     }
+
+    &__gallery {
+        width: 100%;
+    }
+
 }
 
- .attribution { font-size: 11px; text-align: center; }
- .attribution a { color: hsl(228, 45%, 44%); }
+.testimonials {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(4, auto);
+
+    padding: 18% 8% 22%;
+    text-align: center;
+
+    @media (min-width: $mobile-lg) {
+        padding: 12% 15% 15%;
+    }
+
+    &__title {
+        color: $grayish-blue;
+        text-transform: uppercase;
+        font-size: 1.6em;
+        font-weight: 900;
+        letter-spacing: 4px;
+
+        @media (min-width: $mobile-lg) {
+             font-size: 2em;
+        }
+    }
+}
+
+.client {
+    height: min-content;
+    padding: 20% 0 2%;
+
+    @media (min-width: $mobile-lg) {
+        padding-top: 15%;
+    }
+
+    &__avatar {
+        height: 70px;
+        width: 70px;
+        margin: 0 auto;
+
+        @media (min-width: $mobile-lg) {
+            height: 90px;
+            width: 90px;
+        }
+        img {
+            height: 100%;
+            border-radius: 50%;
+        }
+    }
+
+    &__txt {
+        padding: 10% 0;
+        color: $very-dark-grayish-blue;
+        font-size: 1.8em;
+        line-height: 1.8;
+    }
+
+    &__name {
+        display: block;
+        padding-bottom: 4%;
+        font-family: 'Fraunces', serif;
+        color: $very-dark-desaturated-blue;
+        font-weight: 900;
+        font-size: 1.7em;        
+    }
+
+    &__profession {
+        display: block;
+        color: $grayish-blue;
+        font-size: 1.4em;
+    }
+}
+
+.portfolio {
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-template-rows: auto auto;
+
+    &__project {
+        height: 50vw;
+        width: 50vw;
+        background-size: cover;
+    }
+
+    .milk {
+        background-image: url(../images/mobile/image-gallery-milkbottles.jpg);
+    }
+
+    .orange {
+        background-image: url(../images/mobile/image-gallery-orange.jpg);
+    }
+
+    .cone {
+        background-image: url(../images/mobile/image-gallery-cone.jpg);
+    }
+
+    .sugar {
+        background-image: url(../images/mobile/image-gallery-sugar-cubes.jpg);
+    }
+}
+
+.footer {
+    background-color: lighten($footer-bgc, 30%);
+    color: $footer-bgc;
+
+    &__logo {
+        width: fit-content;
+        margin: 0 auto;
+        padding: 15% 0 10%;
+
+        img {
+            height: 3.2em;
+        }
+    }
+
+    &__socials {
+        display: flex;
+        justify-content: space-evenly;
+        width: 60%;
+        margin: 0 auto 20%;
+
+        @media (min-width: $mobile-lg) {
+            margin-bottom: 15%;
+        }
+
+        img {
+            height: 2em;
+        }
+    }
+
+}
+
+ .attribution { 
+    font-size: 1.1em;
+    text-align: center;
+    padding: 4px 0;
+
+    a { 
+        color: hsl(228, 45%, 44%); 
+    }
+}
