@@ -8,11 +8,12 @@
     grid-template-columns: 1fr;
 
     overflow: hidden;
+
 }
 
 .header {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 60% 40%;
     grid-template-rows: auto 1fr;
 
     position: relative;
@@ -28,17 +29,39 @@
         background-position-y: -300px;
     }
 
+    @media (min-width: $desktop-sm) {
+        grid-area: 1/1/2/3;
+
+        background-image: url(../images/desktop/image-header.jpg);
+        background-position-y: 0;
+        height: 100vh;
+        // max-height: 900px;
+        padding: 3%;
+    }
+
     &__logo {
         grid-area: 1/1/2/2;
+        position: relative;
         
         img {
             height: 2.4em;
+
+            @media (min-width: $desktop-sm) {
+                position: absolute;
+                left: 0;
+                top: 50%;
+                transform: translateY(-50%);
+            }
         }
     }
 
     &__menu {
         grid-area: 1/2/2/3;
         justify-self: end;
+        
+        @media (min-width: $desktop-sm) {
+            width: 100%;
+        }
     }
 
     &__title {
@@ -53,6 +76,11 @@
 
         @media (max-width: $mobile-xs) {
             font-size: 3em;
+        }
+
+        @media (min-width: $desktop-sm) {
+            padding-top: 10%;
+            letter-spacing: 8px;
         }
     }
 
@@ -70,21 +98,22 @@
             top: 600px;
         }
 
-        #menu-icon {
-            height: 11.4em;
-
-            @media (min-width: $mobile-md) {
-                height: 13em;
-            }
+        @media (min-width: $desktop-sm) {
+            top: 420px;
         }
+
     }
 }
 
 .menu {
     &__hamburger {
 
-        img {
+        #meni-icon {
             height: 2.4em;
+        }
+
+        @media (min-width: $desktop-sm) {
+            display: none;
         }
     }
 
@@ -124,6 +153,19 @@
             padding: 20px 0;
             background-color: $white;
             color: $dark-grayish-blue;
+
+            @media (min-width: $desktop-sm) {
+                display: flex;
+                flex-wrap: nowrap;
+                justify-content: space-evenly;
+                position: static;
+                top: 0;
+                right: 0;
+                width: 100%;
+                height: auto;
+                padding: 0;
+                background-color: transparent;
+            }
         }
 
         &--footer {
@@ -135,6 +177,12 @@
             @media (min-width: $mobile-lg) {
                 padding-bottom: 15%;
             }
+
+            @media (min-width: $desktop-sm) {
+                width: 25%;
+                margin: 0 auto;
+                padding-bottom: 6%;
+            }
         }
     }
 
@@ -143,7 +191,13 @@
         font-size: 1.9em;
         text-align: center;
 
+        @media (min-width: $desktop-sm) {
+            font-size: 1.3em;
+            color: $white;
+        }
+
        &--header {
+
         &:nth-last-of-type(1) {
             width: fit-content;
             height: 56px;
@@ -156,7 +210,18 @@
             line-height: 56px;
             font-weight: 700;
             background-color: $yellow;
+
+            @media (min-width: $desktop-sm) {
+                font-size: 1.2em;
+                background-color: $white;
+                padding: 0 25px;
+            }
         }
+       }
+
+       &--footer {
+           font-size: 1.4em;
+           color: $footer-bgc;
        }
     }
 }
@@ -164,6 +229,10 @@
 .content {
     display: grid;
     grid-template-columns: 1fr;
+
+    @media (min-width: $desktop-sm) {
+        grid-template-columns: 50% 50%;
+    }
 
     &__img {
         background-size: cover;
@@ -178,13 +247,28 @@
         @media (min-width: $mobile-lg) {
             height: 800px;
         }
+
+        @media (min-width: $desktop-sm) {
+            height: 600px;
+        }
+
        
         &--yellow {
         background-image: url(../images/mobile/image-transform.jpg);
+
+        @media (min-width: $desktop-sm) {
+            grid-area: 2/2;
+            background-image: url(../images/desktop/image-transform.jpg);
+        }
        }
 
        &--pink {
         background-image: url(../images/mobile/image-stand-out.jpg);
+
+        @media (min-width: $desktop-sm) {
+            grid-area: 3/1;
+            background-image: url(../images/desktop/image-stand-out.jpg);
+        }
        }
     }
 
@@ -192,28 +276,62 @@
         padding: 18% 8%;
         text-align: center;
 
+        @media (min-width: $desktop-sm) {
+            height: 600px;
+        }
+
+        &--yellow {
+            @media (min-width: $desktop-sm) {
+                grid-area: 2/1;
+                padding: 22% 15% 20% 22%;
+                text-align: left;
+            }
+        }
+
+        &--pink {
+            @media (min-width: $desktop-sm) {
+                grid-area: 3/2;
+                padding: 22% 22% 20% 15%;
+                text-align: left;
+            }
+        }
+
         &--green, &--blue {
             background-size: cover;
             background-position: top;
             min-height: 600px;
 
             @media (min-width: $mobile-md) {
-                min-height: 900px;
+                height: 1000px;
             }
 
             @media (min-width: $mobile-lg) {
                 height: 1200px;
+            }
+
+            @media (min-width: $desktop-sm) {
+                height: 600px;
             }
         }
 
         &--green {
             background-image: url(../images/mobile/image-graphic-design.jpg);
             color: $graphic-design-text;
+
+            @media (min-width: $desktop-sm) {
+                grid-area: 4/1;
+                background-image: url(../images/desktop/image-graphic-design.jpg);
+            }
         }
 
         &--blue {
             background-image: url(../images/mobile/image-photography.jpg);
             color: $photography-text;
+
+            @media (min-width: $desktop-sm) {
+                grid-area: 4/2;
+                background-image: url(../images/desktop/image-photography.jpg);
+            }
         }
     }
 
@@ -224,6 +342,10 @@
         &--lg {
             font-size: 3.1em;
             line-height: 1.2;
+
+            @media (min-width: $desktop-sm) {
+                font-size: 2.8em;
+            }
         }
 
         &--sm {
@@ -238,6 +360,11 @@
             @media (min-width: $mobile-lg) {
                 padding-top: 700px;
             }
+
+            @media (min-width: $desktop-sm) {
+                padding-top: 270px;
+                font-size: 2em;
+            }
         }
     }
 
@@ -248,6 +375,10 @@
             color: $dark-grayish-blue;
             font-size: 1.8em;
             line-height: 1.6;
+
+            @media (min-width: $desktop-sm) {
+                font-size: 1.3em;
+            }
         }
 
         &--sm {
@@ -255,6 +386,12 @@
             color: inherit;
             font-size: 1.6em;
             line-height: 1.6;
+
+
+            @media (min-width: $desktop-sm) {
+                padding: 5% 20%;
+                font-size: 1.2em;
+            }
         }
     }
 
@@ -266,11 +403,19 @@
         font-weight: 900;
         color: $very-dark-desaturated-blue;
 
+        @media (min-width: $desktop-sm) {
+            font-size: 1.2em;
+        }
+
         &-wrapper {
             position: relative;
             width: fit-content;
             padding: 0 2%;
             margin: 0 auto;
+
+            @media (min-width: $desktop-sm) {
+                margin: 0;
+            }
         }
 
         &-underline {
@@ -303,12 +448,24 @@
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: repeat(4, auto);
-
+    
+    max-width: 1600px;
+    margin: 0 auto;
     padding: 18% 8% 22%;
     text-align: center;
 
     @media (min-width: $mobile-lg) {
         padding: 12% 15% 15%;
+    }
+
+    @media (min-width: $desktop-sm) {
+        grid-area: 5/1/6/3;
+
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: auto 1fr;
+        gap: 40px;
+
+        padding: 12%;
     }
 
     &__title {
@@ -321,11 +478,18 @@
         @media (min-width: $mobile-lg) {
              font-size: 2em;
         }
+
+        @media (min-width: $desktop-sm) {
+            grid-area: 1/1/2/4;
+            font-size: 1.5em;
+            letter-spacing: 5px;
+        }
     }
 }
 
 .client {
-    height: min-content;
+    display: grid;
+    grid-template-rows: auto 1fr auto auto;
     padding: 20% 0 2%;
 
     @media (min-width: $mobile-lg) {
@@ -337,10 +501,6 @@
         width: 70px;
         margin: 0 auto;
 
-        @media (min-width: $mobile-lg) {
-            height: 90px;
-            width: 90px;
-        }
         img {
             height: 100%;
             border-radius: 50%;
@@ -352,6 +512,11 @@
         color: $very-dark-grayish-blue;
         font-size: 1.8em;
         line-height: 1.8;
+
+        @media (min-width: $desktop-sm) {
+            font-size: 1.25em;
+            padding: 15% 0 20%;
+        }
     }
 
     &__name {
@@ -360,13 +525,23 @@
         font-family: 'Fraunces', serif;
         color: $very-dark-desaturated-blue;
         font-weight: 900;
-        font-size: 1.7em;        
+        font-size: 1.7em;  
+        
+        @media (min-width: $desktop-sm) {
+            font-size: 1.3em;
+            align-self: end;
+        }
     }
 
     &__profession {
         display: block;
         color: $grayish-blue;
         font-size: 1.4em;
+
+        @media (min-width: $desktop-sm) {
+            font-size: 1.1em;
+            align-self: end;
+        }
     }
 }
 
@@ -375,30 +550,65 @@
     grid-template-columns: auto auto;
     grid-template-rows: auto auto;
 
+    width: 100vw;
+
+    @media (min-width: $desktop-sm) {
+        grid-area: 6/1/7/3;
+
+        grid-template-columns: repeat(4, 25%);
+        grid-template-rows: auto;
+    }
+
     &__project {
         height: 50vw;
         width: 50vw;
         background-size: cover;
+
+        @media (min-width: $desktop-sm)  {
+            width: 25vw;
+            height: 30vw;
+            background-position: center top;
+        }
     }
 
     .milk {
         background-image: url(../images/mobile/image-gallery-milkbottles.jpg);
+
+        @media (min-width: $desktop-sm)  {
+            background-image: url(../images/desktop/image-gallery-milkbottles.jpg);
+        }
     }
 
     .orange {
         background-image: url(../images/mobile/image-gallery-orange.jpg);
+
+        @media (min-width: $desktop-sm)  {
+            background-image: url(../images/desktop/image-gallery-orange.jpg);
+        }
     }
 
     .cone {
         background-image: url(../images/mobile/image-gallery-cone.jpg);
+
+        @media (min-width: $desktop-sm)  {
+            background-image: url(../images/desktop/image-gallery-cone.jpg);
+        }
     }
 
     .sugar {
         background-image: url(../images/mobile/image-gallery-sugar-cubes.jpg);
+
+        @media (min-width: $desktop-sm)  {
+            background-image: url(../images/desktop/image-gallery-sugarcubes.jpg);
+        }
     }
 }
 
 .footer {
+    @media (min-width: $desktop-sm) {
+        grid-area: 7/1/8/3;
+    }
+
     background-color: lighten($footer-bgc, 30%);
     color: $footer-bgc;
 
@@ -407,8 +617,16 @@
         margin: 0 auto;
         padding: 15% 0 10%;
 
+        @media (min-width: $desktop-sm) {
+            padding: 6% 0 3%;
+        }
+
         img {
             height: 3.2em;
+
+            @media (min-width: $desktop-sm)  {
+                height: 2.5em;
+            }
         }
     }
 
@@ -422,8 +640,17 @@
             margin-bottom: 15%;
         }
 
+        @media (min-width: $desktop-sm) {
+            width: 16%;
+            margin-bottom: 5%;
+        }
+
         img {
             height: 2em;
+
+            @media (min-width: $desktop-sm) {
+                height: 1.5em;
+            }
         }
     }
 
