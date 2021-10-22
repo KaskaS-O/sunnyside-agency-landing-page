@@ -1,0 +1,122 @@
+.menu {
+
+    &__hamburger {
+
+        #meni-icon {
+            height: 2.4em;
+        }
+
+        @media (min-width: $desktop-sm) {
+            display: none;
+        }
+    }
+
+    .active {
+        display: flex;
+    }
+
+    &__triangle {
+        display: none;
+        position: absolute;
+        top: 15vh;
+        right: 8vw;
+        transform: translateY(-50%);
+        height: 0;
+        width: 0;
+        border-right: 25px solid $white;
+        border-top: 25px solid transparent;
+        border-bottom: 25px solid transparent;
+        
+    }
+
+    &__list {
+        list-style: none;
+
+        &--header {
+            display: none;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+            align-items: center;
+            position: absolute;
+            z-index: 5;
+            top: 15vh;
+            right: 8vw;
+            width: 320px;
+            max-width: 86vw;
+            height: 300px;
+            padding: 20px 0;
+            background-color: $white;
+            color: $dark-grayish-blue;
+
+            @media (min-width: $desktop-sm) {
+                display: flex;
+                flex-wrap: nowrap;
+                justify-content: space-evenly;
+                position: static;
+                top: 0;
+                right: 0;
+                width: 100%;
+                height: auto;
+                padding: 0;
+                background-color: transparent;
+            }
+        }
+
+        &--footer {
+            display: flex;
+            justify-content: space-evenly;
+            width: 100%;
+            padding-bottom: 25%;
+
+            @media (min-width: $mobile-lg) {
+                padding-bottom: 15%;
+            }
+
+            @media (min-width: $desktop-sm) {
+                width: 25%;
+                margin: 0 auto;
+                padding-bottom: 6%;
+            }
+        }
+    }
+
+    &__item {
+        width: 100%;
+        font-size: 1.9em;
+        text-align: center;
+
+        @media (min-width: $desktop-sm) {
+            font-size: 1.3em;
+            color: $white;
+        }
+
+       &--header {
+
+        &:nth-last-child(1) {
+            width: fit-content;
+            height: 56px;
+            padding: 0 30px;
+            border-radius: 28px;
+            text-transform: uppercase;
+            font-family: 'Fraunces', serif;
+            color: $very-dark-desaturated-blue;
+            font-size: 1.6em;
+            line-height: 56px;
+            font-weight: 700;
+            background-color: $yellow;
+
+            @media (min-width: $desktop-sm) {
+                font-size: 1.2em;
+                background-color: $white;
+                padding: 0 25px;
+            }
+
+        }
+       }
+
+       &--footer {
+           font-size: 1.4em;
+           color: $footer-bgc;
+       }
+    }
+}

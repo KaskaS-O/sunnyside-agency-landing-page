@@ -26,14 +26,6 @@ h1, h2, h3, h4 {
   font-family: 'Fraunces', serif;
 }
 
-.grid-container {
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: 1fr;
-      grid-template-columns: 1fr;
-  overflow: hidden;
-}
-
 .header {
   display: -ms-grid;
   display: grid;
@@ -161,6 +153,14 @@ h1, h2, h3, h4 {
   .header__arrow-icon {
     top: 420px;
   }
+}
+
+.grid-container {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr;
+      grid-template-columns: 1fr;
+  overflow: hidden;
 }
 
 .menu__hamburger #meni-icon {

@@ -16,3 +16,11 @@ body {
 h1, h2, h3, h4 {
     font-family: 'Fraunces', serif;
 }
+
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr;
+
+    overflow: hidden;
+
+}
