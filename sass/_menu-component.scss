@@ -90,6 +90,10 @@
             color: $white;
         }
 
+        &:hover {
+            cursor: pointer;
+        }
+
        &--header {
 
         &:nth-last-child(1) {
@@ -104,11 +108,17 @@
             line-height: 56px;
             font-weight: 700;
             background-color: $yellow;
+            transition: 0.2s;
 
             @media (min-width: $desktop-sm) {
                 font-size: 1.2em;
                 background-color: $white;
                 padding: 0 25px;
+            }
+
+            &:hover {
+                color: $white;
+                background-color: rgba($white, 0.3);
             }
 
         }
@@ -117,6 +127,15 @@
        &--footer {
            font-size: 1.4em;
            color: $footer-bgc;
+           transition: 0.2s;
+
+           &:hover {
+               color: $white;
+           }
        }
+    }
+    &__link {
+        color: inherit;
+        text-decoration: none;
     }
 }

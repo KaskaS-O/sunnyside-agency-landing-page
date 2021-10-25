@@ -29,6 +29,7 @@
         justify-content: space-evenly;
         width: 60%;
         margin: 0 auto 20%;
+        font-size: 2em;
 
         @media (min-width: $mobile-lg) {
             margin-bottom: 15%;
@@ -37,15 +38,19 @@
         @media (min-width: $desktop-sm) {
             width: 16%;
             margin-bottom: 5%;
+            font-size: 1.5em;
         }
 
-        img {
-            height: 2em;
+        i {
+            color: $icons;
+            transition: 0.2s;
 
-            @media (min-width: $desktop-sm) {
-                height: 1.5em;
+            &:hover {
+                color: $white;
+                
             }
         }
+
     }
 
 }

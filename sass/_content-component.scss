@@ -188,6 +188,14 @@
             @media (min-width: $desktop-sm) {
                 margin: 0;
             }
+
+            &:hover {
+                cursor: pointer;
+
+                .content__link-underline {
+                    opacity: 1;
+                }
+            }
         }
 
         &-underline {
@@ -199,6 +207,7 @@
             opacity: 0.25;
             border-radius: 4px;
             z-index: -1;
+            transition: 0.2s;
             
             &--yellow {
                 background-color: $yellow;
